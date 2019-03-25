@@ -7,48 +7,48 @@
     <title>Ciente - Jubarte - Prefeitura Municipal de Rio das Ostras - RJ</title>
 
     <!-- ESTILO LIMITLESS -->
-    <link href="/cdn/Assets/fonts/material-icons/material-icons.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Assets/fonts/roboto/roboto.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Vendor/limitless/material/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Vendor/limitless/material/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Vendor/limitless/material/css/core.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Vendor/limitless/material/css/components.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Vendor/limitless/material/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/fonts/material-icons/material-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/fonts/roboto/roboto.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/css/core.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/css/components.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/css/colors.css" rel="stylesheet" type="text/css">
     <!-- ESTILO LIMITLESS -->
 
     <!-- JS CORE LIMITLESS -->
-    <script type="text/javascript" src="/cdn/Vendor/limitless/material/js/core/libraries/jquery.min.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/limitless/material/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/core/libraries/bootstrap.min.js"></script>
     <script type="text/javascript"
-            src="/cdn/Vendor/limitless/material/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+            src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
 
     <!-- /JS CORE LIMITLESS -->
 
     <script type="text/javascript"
-            src="/cdn/Vendor/limitless/material/js/plugins/forms/styling/uniform.min.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/limitless/material/js/plugins/notifications/jgrowl.min.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/limitless/material/js/plugins/ui/ripple.min.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/bootstrap-select-1.12.4/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/bootstrap-select-1.12.4/defaults-pt_BR.min.js"></script>
+            src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/plugins/notifications/jgrowl.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/limitless/material/js/plugins/ui/ripple.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/bootstrap-select-1.12.4/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/bootstrap-select-1.12.4/defaults-pt_BR.min.js"></script>
 
     <!-- DEPENDEICIAS JUBARTE -->
-    <link href="/cdn/Assets/css/jSwitch.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Assets/css/jubarteStyle.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Assets/css/modernDataTable.css" rel="stylesheet" type="text/css">
-    <link href="/cdn/Assets/css/ModernTreeView.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/css/jSwitch.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/css/jubarteStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/css/modernDataTable.css" rel="stylesheet" type="text/css">
+    <link href="https://jubarte.riodasostras.rj.gov.br/cdn/Assets/css/ModernTreeView.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="/cdn/Vendor/moment/2.19.1/moment.js"></script>
-    <script type="text/javascript" src="/cdn/Vendor/moment/2.19.1/locale/pt-br.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/moment/2.19.1/moment.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/Vendor/moment/2.19.1/locale/pt-br.js"></script>
 
     <!-- DEPENDECIAS DA VIEW MODEL -->
-    <script type="text/javascript" src="/cdn/utils/utils.js"></script>
-    <script type="text/javascript" src="/cdn/utils/jubarte.js"></script>
-    <script type="text/javascript" src="/cdn/utils/ModalAPI.js"></script>
-    <script type="text/javascript" src="/cdn/utils/ModernBlockUI.js"></script>
-    <script type="text/javascript" src="/cdn/utils/LoaderAPI.js"></script>
-    <script type="text/javascript" src="/cdn/utils/RESTClient.js"></script>
-    <script type="text/javascript" src="/cdn/utils/ModernDataTable.js"></script>
-    <script type="text/javascript" src="/cdn/utils/ModernTreeView.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/utils.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/jubarte.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/ModalAPI.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/ModernBlockUI.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/LoaderAPI.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/RESTClient.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/ModernDataTable.js"></script>
+    <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/ModernTreeView.js"></script>
 
     <!-- VIEW MODEL -->
     <script type="text/javascript" src="ViewModel/Constants.js"></script>

@@ -8,7 +8,8 @@ use PmroPadraoLib\Middleware\PermissionMiddleware;
 
 $app->get('/', function (Request $request, Response $response, $args) use ($app) {
 
-    return $this->view->render($response, 'FichaCadastroView.php');
+    //return $this->view->render($response, 'FichaCadastroView.php');
+    return $this->view->render($response, 'Version.php');
     /*if(date("d") > 20 ) {
         return $this->view->render($response, 'FichaCadastroView.php');
     }*/
@@ -30,4 +31,5 @@ $app->group('', function () use ($app) {
         return $this->view->render($response, 'GerenciaFichaView.php');
     });
 
-})->add(new PermissionMiddleware($container, Constants::SISTEMA_MINHA_CASA_ID));
+});
+//->add(new PermissionMiddleware($container, Constants::SISTEMA_MINHA_CASA_ID));
