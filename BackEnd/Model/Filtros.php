@@ -6,9 +6,10 @@
  * Time: 13:17
  */
 
-namespace MinhaCasa\Model;
+namespace Modelo\Model;
 
-use MinhaCasa\Model\Filtro;
+use Modelo\Model\Filtro;
+
 class Filtros
 {
     public $filtros = array();

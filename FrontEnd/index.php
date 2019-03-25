@@ -1,11 +1,11 @@
 <?php
 
 $ini_array = parse_ini_file('../.env');
-define('VIEWS_DIR_MINHA_CASA',$ini_array['VIEWS_DIR']);
-define('DB_HOST_MINHA_CASA',$ini_array['DB_HOST']);
-define('PROXY_MINHA_CASA',$ini_array['PROXY']);
-define('STORAGE_PATH_MINHA_CASA',$ini_array['STORAGE_PATH']);
-define('WEB_ROOT_PATH_MINHA_CASA',$ini_array['WEB_ROOT_PATH']);
+define('VIEWS_DIR_MODELO',$ini_array['VIEWS_DIR']);
+define('DB_HOST_MODELO',$ini_array['DB_HOST']);
+define('PROXY_MODELO',$ini_array['PROXY']);
+define('STORAGE_PATH_MODELO',$ini_array['STORAGE_PATH']);
+define('WEB_ROOT_PATH_MODELO',$ini_array['WEB_ROOT_PATH']);
 
 $BASE_DIR = dirname(__FILE__);
 $VIEWS_DIR = $BASE_DIR.'/View';

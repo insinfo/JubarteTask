@@ -6,9 +6,9 @@
  * Time: 16:11
  */
 
-namespace MinhaCasa\Model;
+namespace Modelo\Model;
 
-use MinhaCasa\Services\TraitFillFromArray;
+use Modelo\Services\TraitFillFromArray;
 
 class Ficha
 {

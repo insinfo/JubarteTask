@@ -6,11 +6,11 @@
  * Time: 16:20
  */
 
-namespace MinhaCasa\Services;
+namespace Modelo\Services;
 
-use MinhaCasa\Util\DBLayer;
-use MinhaCasa\Model\ServidorConcursado;
-use MinhaCasa\Model\Filtros;
+use Modelo\Util\DBLayer;
+use Modelo\Model\ServidorConcursado;
+use Modelo\Model\Filtros;
 use \Exception;
 use function PHPSTORM_META\elementType;
 

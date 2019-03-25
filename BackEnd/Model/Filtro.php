@@ -6,7 +6,7 @@
  * Time: 13:14
  */
 
-namespace MinhaCasa\Model;
+namespace Modelo\Model;
 
 
 class Filtro

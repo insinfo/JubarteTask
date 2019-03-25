@@ -6,7 +6,7 @@
  * Time: 15:41
  */
 
-namespace MinhaCasa\Util;
+namespace Modelo\Util;
 
 
 class Utils

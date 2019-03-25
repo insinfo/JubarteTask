@@ -6,11 +6,11 @@
  * Time: 16:20
  */
 
-namespace MinhaCasa\Services;
+namespace Modelo\Services;
 
-use MinhaCasa\Util\DBLayer;
-use MinhaCasa\Model\Ficha;
-use MinhaCasa\Model\Filtros;
+use Modelo\Util\DBLayer;
+use Modelo\Model\Ficha;
+use Modelo\Model\Filtros;
 use \Exception;
 
 class FichaService implements IFichaDataStore

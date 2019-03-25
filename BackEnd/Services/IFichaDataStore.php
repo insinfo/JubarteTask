@@ -7,9 +7,9 @@
  * Time: 16:22
  */
 
-namespace MinhaCasa\Services;
-use MinhaCasa\Model\Ficha;
-use MinhaCasa\Model\Filtros;
+namespace Modelo\Services;
+use Modelo\Model\Ficha;
+use Modelo\Model\Filtros;
 
 interface IFichaDataStore
 {

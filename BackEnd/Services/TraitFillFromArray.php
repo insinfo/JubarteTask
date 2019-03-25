@@ -6,7 +6,7 @@
  * Time: 18:45
  */
 
-namespace MinhaCasa\Services;
+namespace Modelo\Services;
 use \ReflectionClass;
 
 trait TraitFillFromArray

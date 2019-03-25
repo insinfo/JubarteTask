@@ -6,19 +6,19 @@
  * Time: 17:37
  */
 
-namespace MinhaCasa\Controllers;
+namespace Modelo\Controllers;
 
-use MinhaCasa\Model\Ficha;
-use MinhaCasa\Model\Filtro;
-use MinhaCasa\Model\Filtros;
+use Modelo\Model\Ficha;
+use Modelo\Model\Filtro;
+use Modelo\Model\Filtros;
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 use \PmroPadraoLib\Util\StatusCode;
 use \PmroPadraoLib\Util\StatusMessage;
-use MinhaCasa\Services\FichaService;
-use MinhaCasa\Services\ServidorConcursadoService;
+use Modelo\Services\FichaService;
+use Modelo\Services\ServidorConcursadoService;
 use \Exception;
-use MinhaCasa\Util\Utils;
+use Modelo\Util\Utils;
 
 class FichaController
 {

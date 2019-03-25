@@ -3,7 +3,7 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-use MinhaCasa\Model\Constants;
+use Modelo\Model\Constants;
 use PmroPadraoLib\Middleware\PermissionMiddleware;
 
 $app->get('/', function (Request $request, Response $response, $args) use ($app) {

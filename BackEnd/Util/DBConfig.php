@@ -6,7 +6,7 @@
  * Time: 18:09
  */
 
-namespace MinhaCasa\Util;
+namespace Modelo\Util;
 class DBConfig extends \PmroPadraoLib\Util\DBConfig
 {
     const DEFAULT_CONNECTION = 'laravel';    

@@ -6,7 +6,7 @@
  * Time: 17:15
  */
 
-namespace MinhaCasa\Model;
+namespace Modelo\Model;
 
 
 class Constants

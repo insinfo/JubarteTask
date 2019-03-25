@@ -3,7 +3,7 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-use \MinhaCasa\Controllers\FichaController;
+use \Modelo\Controllers\FichaController;
 
 use PmroPadraoLib\Middleware\AuthMiddleware;
 use PmroPadraoLib\Middleware\LogMiddleware2;

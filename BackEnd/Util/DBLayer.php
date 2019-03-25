@@ -6,7 +6,7 @@
  * Time: 17:24
  */
 
-namespace MinhaCasa\Util;
+namespace Modelo\Util;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use \ReflectionClass;
