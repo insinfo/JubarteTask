@@ -1,17 +1,22 @@
 <?php
 
-$ini_array = parse_ini_file('../.env');
+$BASE_DIR = dirname(__FILE__);
+
+$ini_array = parse_ini_file($BASE_DIR.'/../.env');
 define('VIEWS_DIR_MODELO',$ini_array['VIEWS_DIR']);
 define('DB_HOST_MODELO',$ini_array['DB_HOST']);
+define('DB_NAME',$ini_array['DB_NAME']);
+define('DB_USERNAME',$ini_array['DB_USERNAME']);
+define('DB_PASSWORD',$ini_array['DB_PASSWORD']);
 define('PROXY_MODELO',$ini_array['PROXY']);
 define('STORAGE_PATH_MODELO',$ini_array['STORAGE_PATH']);
 define('WEB_ROOT_PATH_MODELO',$ini_array['WEB_ROOT_PATH']);
 
-$BASE_DIR = dirname(__FILE__);
+
 $VIEWS_DIR = $BASE_DIR.'/View';
 
-require_once '../../pmroPadrao/src/start.php';
-require_once '../BackEnd/vendor/autoload.php';
+//require_once '../../pmroPadrao/src/start.php';
+require_once $BASE_DIR.'/../BackEnd/vendor/autoload.php';
 
 use Slim\Handlers\NotFound;
 use Slim\Views\Twig;
@@ -57,8 +62,8 @@ $container['notFoundHandler'] = function ($c) {
 };
 
 // ROTAS DE WEBPAGES
-require_once '../BackEnd/Routes/web.php';
+require_once $BASE_DIR.'/../BackEnd/Routes/web.php';
 
-require_once '../BackEnd/Routes/webservice.php';
+require_once $BASE_DIR.'/../BackEnd/Routes/webservice.php';
 
 $app->run();

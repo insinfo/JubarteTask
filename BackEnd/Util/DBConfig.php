@@ -7,11 +7,11 @@
  */
 
 namespace Modelo\Util;
-class DBConfig extends \PmroPadraoLib\Util\DBConfig
+class DBConfig
 {
     const DEFAULT_CONNECTION = 'laravel';    
     const DEFAULT_DATABASE_NAME = 'sistemas';
-    const DEFAULT_SCHEMA_NAME = 'minhaCasa';
+    const DEFAULT_SCHEMA_NAME = 'public';
 
     public static function getConnections()
     {
@@ -21,14 +21,14 @@ class DBConfig extends \PmroPadraoLib\Util\DBConfig
 
                 'laravel' => [
                     'driver' => 'pgsql',
-                    'host' => DB_HOST_MINHA_CASA,
+                    'host' => DB_HOST_MODELO,
                     'port' => '5432',
-                    'database' => 'sistemas',
-                    'username' => 'sisadmin',
-                    'password' => 's1sadm1n',
+                    'database' => DB_NAME,
+                    'username' => DB_USERNAME,
+                    'password' => DB_PASSWORD,
                     'charset' => 'utf8',
                     'prefix' => '',
-                    'schema' => ['pmro_padrao', 'jubarte', 'ciente', 'portal_rh', 'minhaCasa'],
+                    'schema' => ['public'],
                     'sslmode' => 'prefer',
                 ],
             ],

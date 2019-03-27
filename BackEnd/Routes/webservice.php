@@ -5,8 +5,6 @@ use \Slim\Http\Response;
 
 use \Modelo\Controllers\FichaController;
 
-use PmroPadraoLib\Middleware\AuthMiddleware;
-use PmroPadraoLib\Middleware\LogMiddleware2;
 
 // ROTAS DE WEBSERVICE REST
 $app->group('/api', function () use ($app) {
@@ -41,5 +39,4 @@ $app->group('/api', function () use ($app) {
     });
 
 
-
-})->add(new AuthMiddleware())->add(new LogMiddleware2());
+});

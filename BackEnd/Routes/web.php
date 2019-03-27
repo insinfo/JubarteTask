@@ -4,7 +4,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 use Modelo\Model\Constants;
-use PmroPadraoLib\Middleware\PermissionMiddleware;
+
 
 $app->get('/', function (Request $request, Response $response, $args) use ($app) {
 
@@ -32,4 +32,3 @@ $app->group('', function () use ($app) {
     });
 
 });
-//->add(new PermissionMiddleware($container, Constants::SISTEMA_MINHA_CASA_ID));
