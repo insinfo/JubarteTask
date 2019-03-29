@@ -10,7 +10,7 @@ namespace Modelo\Util;
 class DBConfig
 {
     const DEFAULT_CONNECTION = 'laravel';    
-    const DEFAULT_DATABASE_NAME = 'sistemas';
+    const DEFAULT_DATABASE_NAME = 'db_jubarte';
     const DEFAULT_SCHEMA_NAME = 'public';
 
     public static function getConnections()
@@ -20,9 +20,9 @@ class DBConfig
             'connections' => [
 
                 'laravel' => [
-                    'driver' => 'pgsql',
+                    'driver' => 'mysql',
                     'host' => DB_HOST_MODELO,
-                    'port' => '5432',
+                    'port' => '3306',
                     'database' => DB_NAME,
                     'username' => DB_USERNAME,
                     'password' => DB_PASSWORD,

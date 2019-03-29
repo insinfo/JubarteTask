@@ -1,14 +1,24 @@
 <?php
 
+use \Modelo\Controllers\CategorieController;
+use \Modelo\Controllers\FichaController;
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-use \Modelo\Controllers\FichaController;
+// CATEGORIAS
+//$app->get('categorias', CategorieController::class. ':getCategories');
 
+$app->group('/api', function () use ($app) {
+
+    //CHECA SE É CONCURSADO OU NÃO
+    $app->get('/categorias', function (Request $request, Response $response, $args) use ($app) {
+        return CategorieController::getAll($request, $response);
+    });
+
+});
 
 // ROTAS DE WEBSERVICE REST
 $app->group('/api', function () use ($app) {
-
 
     //CRIA E ATUALIZA
     $app->put('/fichas/[{id}]', function (Request $request, Response $response, $args) use ($app) {
@@ -37,6 +47,5 @@ $app->group('/api', function () use ($app) {
     $app->delete('/fichas', function (Request $request, Response $response, $args) use ($app) {
         return FichaController::deleteItems($request, $response);
     });
-
 
 });

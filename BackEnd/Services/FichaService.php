@@ -8,16 +8,15 @@
 
 namespace Modelo\Services;
 
-use Modelo\Util\DBLayer;
 use Modelo\Model\Ficha;
 use Modelo\Model\Filtros;
-use \Exception;
+use Modelo\Util\DBLayer;
 
 class FichaService implements IFichaDataStore
 {
     private $db = null;
 
-    function __construct()
+    public function __construct()
     {
         $this->db = DBLayer::Connect();
     }
@@ -153,7 +152,6 @@ class FichaService implements IFichaDataStore
                 $query->orWhere($filtro->field, $filtro->operator, $filtro->value);
             }
         }
-
 
         $totalRecords = $query->count();
 

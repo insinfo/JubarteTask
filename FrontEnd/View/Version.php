@@ -34,7 +34,8 @@
     <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/RESTClient.js"></script>
 
     <!-- VIEW MODEL -->
-    <script type="text/javascript" src="/ViewModel/Constants.js"></script>
+    <script type="text/javascript" src="ViewModel/Constants.js"></script>
+    <script type="text/javascript" src="ViewModel/Version.js"></script>
 </head>
 <body class="sidebar-detached-hidden">
 

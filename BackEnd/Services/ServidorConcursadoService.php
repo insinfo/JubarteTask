@@ -8,17 +8,14 @@
 
 namespace Modelo\Services;
 
-use Modelo\Util\DBLayer;
 use Modelo\Model\ServidorConcursado;
-use Modelo\Model\Filtros;
-use \Exception;
-use function PHPSTORM_META\elementType;
+use Modelo\Util\DBLayer;
 
 class ServidorConcursadoService
 {
     private $db = null;
 
-    function __construct()
+    public function __construct()
     {
         $this->db = DBLayer::Connect();
     }
