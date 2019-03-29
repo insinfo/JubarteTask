@@ -1,18 +1,34 @@
 <?php
 
 use \Modelo\Controllers\CategorieController;
+use \Modelo\Controllers\TaskController;
 use \Modelo\Controllers\FichaController;
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
 // CATEGORIAS
-//$app->get('categorias', CategorieController::class. ':getCategories');
 
 $app->group('/api', function () use ($app) {
 
-    //CHECA SE É CONCURSADO OU NÃO
-    $app->get('/categorias', function (Request $request, Response $response, $args) use ($app) {
-        return CategorieController::getAll($request, $response);
+    //LISTA TODAS AS CATEGORIAS
+    $app->get('/categorias', function () use ($app) {
+        return CategorieController::getAll();
+    });
+
+});
+
+// TASKS
+
+$app->group('/api', function () use ($app) {
+
+    //LISTA TODAS AS tasks
+    $app->get('/tasks', function () use ($app) {
+        return TaskController::getAll();
+    });
+
+    $app->post('/tasks/new', function () use ($app) {
+        return TaskController::create();
     });
 
 });

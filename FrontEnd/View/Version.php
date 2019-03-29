@@ -34,8 +34,61 @@
     <script type="text/javascript" src="https://jubarte.riodasostras.rj.gov.br/cdn/utils/RESTClient.js"></script>
 
     <!-- VIEW MODEL -->
-    <script type="text/javascript" src="ViewModel/Constants.js"></script>
-    <script type="text/javascript" src="ViewModel/Version.js"></script>
+    <script>
+
+$(document).ready(function () {
+    allTasks()
+})
+
+// ROW PARA EXIBIR NA TIMELINE
+const htmlTask = (itemTask) => {
+    let Html = `
+
+<div class="timeline-row">
+    <div class="timeline-icon">
+        <div class="bg-blue">
+            <i class="icon-hammer"></i>
+        </div>
+    </div>
+
+    <div class="panel panel-flat timeline-content">
+        <div class="panel-heading">
+            <h6 class="panel-title">${itemTask.title}</h6>
+            <div class="heading-elements">
+                <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.date_created}</span>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <p>${itemTask.text}</p>
+        </div>
+    </div>
+</div>
+`
+
+    return Html
+}
+
+// CONSUMINDO O WEBSERVICE PARA LISTAR AS TASKS
+const allTasks = () => {
+
+    const api = "api/tasks"
+
+    $.getJSON(api, function (data) {
+        for (let i = 0; i < data.length; i++) {
+            //REPRODUZ O HTML COM AS TASKS
+            const timelineHtml = htmlTask(data[i])
+            $("#timeLine").append(timelineHtml)
+
+        }
+    })
+
+
+}
+
+
+
+    </script>
 </head>
 <body class="sidebar-detached-hidden">
 
@@ -89,95 +142,16 @@
                                     </div>
                                 </div>
                                 <!-- Timeline -->
+
+
                                 <div class="timeline timeline-left content-group">
                                     <div class="timeline-container">
 
-                                        <div class="timeline-row">
-                                            <div class="timeline-icon">
-                                                <div class="bg-blue">
-                                                    <i class="icon-hammer"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="panel panel-flat timeline-content">
-                                                <div class="panel-heading">
-                                                    <h6 class="panel-title">Versão 1.16.1</h6>
-                                                    <div class="heading-elements">
-                                                        <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: 28/08/2018</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="panel-body">
-                                                    <p>Reparo de funcionalidade...</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="timeline-row">
-                                            <div class="timeline-icon">
-                                                <div class="bg-orange">
-                                                    <i class="icon-fire"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="panel panel-flat timeline-content">
-                                                <div class="panel-heading">
-                                                    <h6 class="panel-title">Versão 1.16</h6>
-                                                    <div class="heading-elements">
-                                                        <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: 27/08/2018</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="panel-body">
-                                                    <p>Novidade: Agora as <strong>notificações</strong> estão disponíveis! Aproveite! </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="timeline-row">
-                                            <div class="timeline-icon">
-                                                <div class="bg-info">
-                                                    <i class="icon-lab"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="panel panel-flat timeline-content">
-                                                <div class="panel-heading">
-                                                    <h6 class="panel-title">Versão 1.15.2</h6>
-                                                    <div class="heading-elements">
-                                                        <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: 20/06/2018</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="panel-body">
-                                                    <p>Módulo de teste... </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="timeline-row">
-                                            <div class="timeline-icon">
-                                                <div class="bg-success">
-                                                    <i class="icon-checkmark4"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="panel panel-flat timeline-content">
-                                                <div class="panel-heading">
-                                                    <h6 class="panel-title">Versão 1.0</h6>
-                                                    <div class="heading-elements">
-                                                        <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: 11/01/2018</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="panel-body">
-                                                    <p>Versão estável! </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="timeLine"></div>
 
                                     </div>
                                 </div>
+                                <!-- /Timeline -->
 
                             </div>
 
