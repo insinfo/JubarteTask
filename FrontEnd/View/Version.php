@@ -56,6 +56,7 @@ const htmlTask = (itemTask) => {
             <h6 class="panel-title">${itemTask.title}</h6>
             <div class="heading-elements">
                 <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.updated_at}</span>
+                <div><a href='' onclick="deleteTask(${itemTask.id})" class='btn btn-danger'>delete</a></div>
             </div>
         </div>
 
@@ -83,8 +84,28 @@ const allTasks = () => {
         }
     })
 
-
 }
+
+function deleteTask(id){
+        $.ajax({
+            type: "DELETE",
+            url: "api/tasks/delete/" + id,
+            context: this,
+            success: function(){
+                console.log('Apagado com sucesso!')
+               
+
+                if( e )
+                    e.remove()
+                
+            },
+            error: function(){
+                console.log(error)
+            },
+        })
+    }
+
+
 
 
 

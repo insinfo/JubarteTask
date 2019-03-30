@@ -43,7 +43,6 @@ class TaskController
     public function delete($request, $response, $args)
     {
         $task = Task::destroy($args['id']);
-
         return json_encode($task);
     }
 
