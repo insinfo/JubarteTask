@@ -55,7 +55,7 @@ const htmlTask = (itemTask) => {
         <div class="panel-heading">
             <h6 class="panel-title">${itemTask.title}</h6>
             <div class="heading-elements">
-                <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.date_created}</span>
+                <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.updated_at}</span>
             </div>
         </div>
 
@@ -142,8 +142,6 @@ const allTasks = () => {
                                     </div>
                                 </div>
                                 <!-- Timeline -->
-
-
                                 <div class="timeline timeline-left content-group">
                                     <div class="timeline-container">
 

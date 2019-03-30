@@ -3,35 +3,54 @@
 use \Modelo\Controllers\CategorieController;
 use \Modelo\Controllers\FichaController;
 use \Modelo\Controllers\TaskController;
+//use \Modelo\Model\Task;
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-//use \Modelo\Model\Task;
-
-// CATEGORIAS
+// API CATEGORIAS
 
 $app->group('/api', function () use ($app) {
 
     //LISTA TODAS AS CATEGORIAS
-    $app->get('/categorias', function () use ($app) {
+    $app->get('/categories', function () use ($app) {
         return CategorieController::getAll();
     });
 
 });
 
-// TASKS
+// API TASKS
 
 $app->group('/api', function () use ($app) {
 
-    //LISTA TODAS AS tasks
+    //LISTA TODAS AS TASKS
     $app->get('/tasks', function () use ($app) {
         return TaskController::getAll();
     });
 
-    $app->post('/tasks/new', function () use ($app) {
-        return TaskController::create();
+    //VISUALIZAR A TASK SELECIONADA
+    $app->get('/task/show/[{id}]', function (Request $request, Response $response, $args) use ($app) {
+        return TaskController::show($request, $response, $args);
     });
 
+    //TOTAL DE TASKS
+    $app->get('/task/count', function () use ($app) {
+        return TaskController::regCount();
+    });
+
+    // Search for todo with given search teram in their name
+    $app->get('/tasks/search/[{query}]', function (Request $request, Response $response, $args) use ($app) {
+        return TaskController::searchTask($request, $response, $args);
+    });
+    //ADICIONA A TASK
+    $app->post('/tasks/new', function (Request $request, Response $response) use ($app) {
+        return TaskController::create($request, $response);
+    });
+    //UPDATE  TASK
+    $app->put('/tasks/update/[{id}]', function (Request $request, Response $response, $args) use ($app) {
+        return TaskController::update($request, $response, $args);
+        
+    });
+    //DELETA A TASK
     $app->delete('/tasks/delete/[{id}]', function (Request $request, Response $response, $args) use ($app) {
 
         return TaskController::delete($request, $response, $args);
