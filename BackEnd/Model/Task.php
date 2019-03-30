@@ -4,7 +4,7 @@ namespace Modelo\Model;
 
 use Modelo\Util\DBLayer;
 
-class Task
+class Task extends \Illuminate\Database\Eloquent\Model
 {
 
     private $db = null;
@@ -25,5 +25,14 @@ class Task
             echo "<b>Erro:</b> A query retornou vazia!";
         }
     }
-
+    public function find($id)
+    {
+        $find = $this->table($this->schema)->find($id);
+        if ($find) {
+            var_dump($find);
+            return $find;
+        } else {
+            echo "<b>Erro:</b> A query retornou vazia!";
+        }
+    }
 }

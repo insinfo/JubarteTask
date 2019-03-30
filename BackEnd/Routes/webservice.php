@@ -1,11 +1,12 @@
 <?php
 
 use \Modelo\Controllers\CategorieController;
-use \Modelo\Controllers\TaskController;
 use \Modelo\Controllers\FichaController;
-
+use \Modelo\Controllers\TaskController;
 use \Slim\Http\Request;
 use \Slim\Http\Response;
+
+//use \Modelo\Model\Task;
 
 // CATEGORIAS
 
@@ -29,6 +30,11 @@ $app->group('/api', function () use ($app) {
 
     $app->post('/tasks/new', function () use ($app) {
         return TaskController::create();
+    });
+
+    $app->delete('/tasks/delete/[{id}]', function (Request $request, Response $response, $args) use ($app) {
+
+        return TaskController::delete($request, $response, $args);
     });
 
 });
