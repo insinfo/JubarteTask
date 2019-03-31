@@ -1,5 +1,5 @@
 <?php
-// model
+
 namespace Modelo\Model;
 
 use Modelo\Util\DBLayer;
@@ -14,7 +14,7 @@ class Task extends \Illuminate\Database\Eloquent\Model
     {
         $this->db = DBLayer::Connect();
     }
-
+    //LISTA TODAS AS TASKS
     public function findAll()
     {
         $query = $this->db->table($this->schema)

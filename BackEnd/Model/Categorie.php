@@ -1,10 +1,10 @@
 <?php
-// model
+
 namespace Modelo\Model;
 
 use Modelo\Util\DBLayer;
 
-class Categorie
+class Categorie extends \Illuminate\Database\Eloquent\Model
 {
 
     private $db = null;
@@ -14,7 +14,7 @@ class Categorie
     {
         $this->db = DBLayer::Connect();
     }
-
+    //LISTA TODAS AS CATEGORIAS
     public function findAll()
     {
         $query = $this->db->table($this->schema)

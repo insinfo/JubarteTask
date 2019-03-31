@@ -3,7 +3,7 @@
 use \Modelo\Controllers\CategorieController;
 use \Modelo\Controllers\FichaController;
 use \Modelo\Controllers\TaskController;
-//use \Modelo\Model\Task;
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
@@ -19,7 +19,6 @@ $app->group('/api', function () use ($app) {
 });
 
 // API TASKS
-
 $app->group('/api', function () use ($app) {
 
     //LISTA TODAS AS TASKS
@@ -27,7 +26,7 @@ $app->group('/api', function () use ($app) {
         return TaskController::getAll();
     });
 
-    //VISUALIZAR A TASK SELECIONADA
+    //VISUALIZA A TASK SELECIONADA
     $app->get('/task/show/[{id}]', function (Request $request, Response $response, $args) use ($app) {
         return TaskController::show($request, $response, $args);
     });
@@ -37,7 +36,7 @@ $app->group('/api', function () use ($app) {
         return TaskController::regCount();
     });
 
-    // Search for todo with given search teram in their name
+    // BUSCA A TASK PELO TITULO
     $app->get('/tasks/search/[{query}]', function (Request $request, Response $response, $args) use ($app) {
         return TaskController::searchTask($request, $response, $args);
     });
@@ -45,14 +44,12 @@ $app->group('/api', function () use ($app) {
     $app->post('/tasks/new', function (Request $request, Response $response) use ($app) {
         return TaskController::create($request, $response);
     });
-    //UPDATE  TASK
+    //ATUALIZA  TASK
     $app->put('/tasks/update/[{id}]', function (Request $request, Response $response, $args) use ($app) {
         return TaskController::update($request, $response, $args);
-        
     });
-    //DELETA A TASK
+    //EXCLUI A TASK
     $app->delete('/tasks/delete/[{id}]', function (Request $request, Response $response, $args) use ($app) {
-
         return TaskController::delete($request, $response, $args);
     });
 

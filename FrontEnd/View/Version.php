@@ -35,81 +35,165 @@
 
     <!-- VIEW MODEL -->
     <script>
+function clickTask() {
 
-$(document).ready(function () {
-    allTasks()
-})
+$("#id").val("")
+$("#allCategories").val("")
+$("#title").val("")
+$("#text").val("")
+$('#modalTask').modal('show')
+
+}
 
 // ROW PARA EXIBIR NA TIMELINE
 const htmlTask = (itemTask) => {
-    let Html = `
+let Html = `
 
 <div class="timeline-row">
-    <div class="timeline-icon">
-        <div class="bg-blue">
-            <i class="icon-hammer"></i>
-        </div>
-    </div>
+<div class="timeline-icon">
+<div class="bg-blue">
+    <i class="icon-hammer"></i>
+</div>
+</div>
 
-    <div class="panel panel-flat timeline-content">
-        <div class="panel-heading">
-            <h6 class="panel-title">${itemTask.title}</h6>
-            <div class="heading-elements">
-                <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.updated_at}</span>
-                <div><a href='' onclick="deleteTask(${itemTask.id})" class='btn btn-danger'>delete</a></div>
-            </div>
-        </div>
-
-        <div class="panel-body">
-            <p>${itemTask.text}</p>
+<div class="panel panel-flat timeline-content">
+<div class="panel-heading">
+    <h6 class="panel-title">${itemTask.title}</h6>
+    <div class="heading-elements">
+        <span class="heading-text"><i class="icon-history position-left text-success"></i> Atualização: ${itemTask.updated_at}</span>
+        <div>
+        <a href='' onclick="deleteTask(${itemTask.id})" class='btn btn-danger'>Excluir</a>
+        <button onclick="showTask(${itemTask.id})" class='btn btn-primary'>Editar</button>
+        
         </div>
     </div>
 </div>
+
+<div class="panel-body">
+    <p>${itemTask.text}</p>
+</div>
+</div>
+</div>
 `
 
-    return Html
+return Html
 }
 
 // CONSUMINDO O WEBSERVICE PARA LISTAR AS TASKS
 const allTasks = () => {
 
-    const api = "api/tasks"
+const api = "api/tasks"
 
-    $.getJSON(api, function (data) {
-        for (let i = 0; i < data.length; i++) {
-            //REPRODUZ O HTML COM AS TASKS
-            const timelineHtml = htmlTask(data[i])
-            $("#timeLine").append(timelineHtml)
+$.getJSON(api, function (data) {
+    for (let i = 0; i < data.length; i++) {
+        //REPRODUZ O HTML COM AS TASKS
+        const timelineHtml = htmlTask(data[i])
+        $("#timeLine").append(timelineHtml)
 
-        }
-    })
+    }
+})
 
 }
 
-function deleteTask(id){
-        $.ajax({
-            type: "DELETE",
-            url: "api/tasks/delete/" + id,
-            context: this,
-            success: function(){
-                console.log('Apagado com sucesso!')
-               
+const deleteTask = (id) => {
+$.ajax({
+    type: "DELETE",
+    url: "api/tasks/delete/" + id,
+    context: this,
+    success: function () {
+        console.log('delete success')
+        if (e)
+            e.remove()
 
-                if( e )
-                    e.remove()
-                
-            },
-            error: function(){
-                console.log(error)
-            },
-        })
+    },
+    error: function () {
+        console.log(error)
+    },
+})
+}
+
+const loadingCategories = () => {
+
+$.getJSON('api/categories', function (data) {
+    //categoriaProduto
+    for (i = 0; i < data.length; i++) {
+        option = '<option value="' + data[i].id + '">' + data[i].name + '</option>'
+        $('#allCategories').append(option)
     }
+})
+
+}
+
+function showTask(id) {
+$.getJSON('api/task/show/' + id, function (data) {
+    console.log(data)
+    $("#id").val(data.id)
+    $("#allCategories").val(data.categorie_id)
+    $("#title").val(data.title)
+    $("#text").val(data.text)
+    $('#modalTask').modal('show')
+})
+}
+
+const newTask = () => {
+data_task = {
+    categorie_id: $("#allCategories").val(),
+    title: $("#title").val(),
+    text: $("#text").val()
+}
+
+$.post("api/tasks/new", data_task, function (data) {
+    console.log(data)
+
+})
+}
+
+function putTask() {
+data_task = {
+    id: $("#id").val(),
+    categorie_id: $("#allCategories").val(),
+    title: $("#title").val(),
+    text: $("#text").val()
+}
+
+$.ajax({
+    type: "PUT",
+    url: "api/tasks/update/" + data_task.id,
+    context: this,
+    data: data_task,
+    success: function (data) {
+        console.log('success')
+        if (e) {
+            console.log(e)
+        }
+
+    },
+
+    error: function () {
+        console.log(error)
+    }
+})
+}
+
+const sendTaks = () => {
+
+if ($("#id").val() != '')
+    putTask()
+else
+    newTask()
+$("#modalTask").modal('hide')
+
+}
 
 
-
-
-
+$(document).ready(function () {
+allTasks()
+loadingCategories()
+instanceTask()
+sendTaks()
+})
     </script>
+
 </head>
 <body class="sidebar-detached-hidden">
 
@@ -141,7 +225,7 @@ function deleteTask(id){
                             <div class="heading-elements">
 
                                 <a href="#" class="btn bg-indigo btn-labeled heading-btn legitRipple"
-                                   data-toggle="modal" data-target="#modalFormFaq">
+                                   data-toggle="modal" onclick="clickTask()">
                                     <b><i class="icon-plus22"></i></b>
                                     Adicionar Versão
                                 </a>
@@ -194,9 +278,8 @@ function deleteTask(id){
     </div>
 </div>
 
-</body>
 
-<div class="modal primary" tabindex="-1" role="dialog" id="modalFormFaq">
+<div class="modal primary" tabindex="-1" role="dialog" id="modalTask">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary">
@@ -211,10 +294,32 @@ function deleteTask(id){
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="input-group">
-                            <label>Versão</label>
-                            <input type="text" class="form-control" required="" name="versao">
+
+                    <form id="formTask">
+                    <input type="hidden" id="id">
+                    <div class="form-group col-lg-12">
+                            <label>Categoria</label>
+                           <select id="allCategories" class="form-control" title="Categoria" required>
+                                <option value="0">Selecione</option>
+                           </select>
                         </div>
+
+                        <div class="form-group col-lg-12">
+                            <label>Versão</label>
+                            <input type="text" class="form-control" id="title" title="Título" required>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label>Texto</label>
+                            <input type="text" class="form-control" id="text" title="Texto" required>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <button onclick="sendTaks()" class='btn btn-success'>Salvar</button>
+                        </div>
+
+                        </form>
+
                     </div>
                 </div>
 
@@ -223,4 +328,5 @@ function deleteTask(id){
     </div>
 </div>
 
+</body>
 </html>
