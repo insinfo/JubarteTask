@@ -35,6 +35,9 @@
 
     <!-- VIEW MODEL -->
     <script>
+    /*
+        Eu entendi que este arquivo era para está no viewModel, mas não conseguir chamar aqui.
+    */
 function clickTask() {
 
 $("#id").val("")
@@ -64,7 +67,7 @@ let Html = `
         <div>
         <a href='' onclick="deleteTask(${itemTask.id})" class='btn btn-danger'>Excluir</a>
         <button onclick="showTask(${itemTask.id})" class='btn btn-primary'>Editar</button>
-        
+
         </div>
     </div>
 </div>
@@ -136,7 +139,7 @@ $.getJSON('api/task/show/' + id, function (data) {
 }
 
 const newTask = () => {
-data_task = {
+const data_task = {
     categorie_id: $("#allCategories").val(),
     title: $("#title").val(),
     text: $("#text").val()
@@ -149,7 +152,7 @@ $.post("api/tasks/new", data_task, function (data) {
 }
 
 function putTask() {
-data_task = {
+const data_task = {
     id: $("#id").val(),
     categorie_id: $("#allCategories").val(),
     title: $("#title").val(),

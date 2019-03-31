@@ -11,15 +11,15 @@ function clickTask() {
 // ROW PARA EXIBIR NA TIMELINE
 const htmlTask = (itemTask) => {
     let Html = `
-
-<div class="timeline-row">
-<div class="timeline-icon">
+    
+    <div class="timeline-row">
+    <div class="timeline-icon">
     <div class="bg-blue">
         <i class="icon-hammer"></i>
     </div>
-</div>
-
-<div class="panel panel-flat timeline-content">
+    </div>
+    
+    <div class="panel panel-flat timeline-content">
     <div class="panel-heading">
         <h6 class="panel-title">${itemTask.title}</h6>
         <div class="heading-elements">
@@ -27,17 +27,17 @@ const htmlTask = (itemTask) => {
             <div>
             <a href='' onclick="deleteTask(${itemTask.id})" class='btn btn-danger'>Excluir</a>
             <button onclick="showTask(${itemTask.id})" class='btn btn-primary'>Editar</button>
-            
+    
             </div>
         </div>
     </div>
-
+    
     <div class="panel-body">
         <p>${itemTask.text}</p>
     </div>
-</div>
-</div>
-`
+    </div>
+    </div>
+    `
 
     return Html
 }
@@ -99,7 +99,7 @@ function showTask(id) {
 }
 
 const newTask = () => {
-    data_task = {
+    const data_task = {
         categorie_id: $("#allCategories").val(),
         title: $("#title").val(),
         text: $("#text").val()
@@ -112,7 +112,7 @@ const newTask = () => {
 }
 
 function putTask() {
-    data_task = {
+    const data_task = {
         id: $("#id").val(),
         categorie_id: $("#allCategories").val(),
         title: $("#title").val(),
